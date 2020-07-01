@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,4 +12,174 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+header {
+  height: 100vh;
+  background-image: url('./component/resource/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 8%;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 5%;
+}
+
+nav #logo {
+  margin-right: auto;
+}
+
+nav #logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+nav button {
+  padding: 10px 15px;
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  transition: .5s linear;
+}
+
+nav button:hover {
+  border: 1px solid white;
+  color: black;
+  background: white;
+}
+
+header #hero {
+  min-width: 300px;
+  width: 60vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  text-align: center;
+  color: white;
+  animation-name: slideInDown;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+
+header #hero h2 {
+  width: 80%;
+  margin: auto;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    top: -10vh;
+  }
+
+  to {
+    opacity: 1;
+    top: 50%;
+  }
+}
+
+section.work-process {
+  text-align: center;
+  padding: 20px 5%;
+  height: auto;
+}
+
+section.work-process p.text {
+  min-width: 300px;
+  width: 45vw;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.process-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 70%;
+}
+
+.process {
+  width: 280px;
+  margin: auto;
+}
+
+.process p {
+  color: #777;
+}
+
+section.portfolio {
+  text-align: center;
+  padding: 20px 0px;
+  height: auto;
+}
+
+section.portfolio p.text {
+  min-width: 300px;
+  width: 45vw;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+div.gallery #tabs {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+div.gallery #tabs li {
+  padding: 5px 15px;
+  color: #777;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+
+div.gallery #tabs li.active, div.gallery #tabs li:hover {
+  /* border-bottom: 1px solid black; */
+  color: black;
+  font-weight: bold;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.gallery-grid .item {
+  min-width: 400px;
+}
+
+.gallery-grid .item img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  .gallery-grid .item {
+    width: 100%;
+  }
 }
